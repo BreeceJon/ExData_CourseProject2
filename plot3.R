@@ -15,7 +15,7 @@ balt_type <- NEI %>%
 
 
 #Make plot3
-png(filename = "plot3.png", width = 8, height = 8, units = "in", res= 2400)
+png(filename = "plot3.png")
 g <- ggplot(balt_type, aes(year, total_emissions))  + geom_point(size = 4) + geom_smooth(method = "lm", se = FALSE) + facet_grid(type~.)
 g + ggtitle("Emissions by Type Over Time") + ylab("Total Emissions (in tons)") + xlab("Year")
 dev.off()

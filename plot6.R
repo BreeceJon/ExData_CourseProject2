@@ -34,7 +34,7 @@ la_mv_total <- la_mv %>%
 rng <- range(balt_mv_total$total_emissions, la_mv_total$total_emissions, na.rm = TRUE)
 
 #Make plot6
-png(filename = "plot6.png", width = 8, height = 8, units = "in", res= 2400)
+png(filename = "plot6.png")
 par(mfrow = c(1,2))
 with(balt_mv_total, plot(year, total_emissions, main = "Baltimore City", xlab = "Year", ylab = "Total Mobile Emissions (in tons)", ylim = rng))
 with(la_mv_total, plot(year, total_emissions, main = "Los Angeles County", xlab = "Year", ylab = "Total Mobile Emissions (in tons)", ylim = rng))

@@ -19,7 +19,7 @@ CoalTotal <- CoalComb %>%
   summarise(total_emissions = sum(Emissions))
 
 #Make plot4
-png(filename = "plot4.png", width = 8, height = 8, units = "in", res= 2400)
+png(filename = "plot4.png")
 g <- ggplot(CoalTotal, aes(year,total_emissions))  + geom_point(color = "red", size = 5, shape = 2) + geom_text(aes(label = round(total_emissions, 0)), vjust = 2)
 g + ggtitle("Emissions by Coal Combustion Over Time") + ylab("Total Emissions (in tons)") + xlab("Year") + scale_y_continuous(limits = c(0,600000))
 dev.off()

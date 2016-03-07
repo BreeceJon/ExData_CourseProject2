@@ -13,7 +13,7 @@ balt <- NEI %>%
 
 
 #Make plot2
-png(filename = "plot2.png", width = 8, height = 8, units = "in", res= 2400)
+png(filename = "plot2.png")
 with(balt, plot(year, total_emissions, main = "Total PM2.5 Emissions by Year in Baltimore City, Maryland", xlab = "Year", ylab = "Total Emissions (in tons)", ylim=c(0, 5000), yaxt = "n"))
 axis(2, at= seq(0,5000, 500), labels = format(seq(0,5000, 500), scientific = FALSE))
 lm1 <- lm(total_emissions ~ year, data = balt)

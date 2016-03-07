@@ -10,7 +10,7 @@ grp_yr_NEI <- group_by(NEI, year)
 grp_yr_NEI <- summarise(grp_yr_NEI, total_emissions = sum(Emissions))
 
 #Make plot1
-png(filename = "plot1.png", width = 8, height = 8, units = "in", res= 2400)
+png(filename = "plot1.png")
 with(grp_yr_NEI, plot(year, total_emissions, main = "Total PM2.5 Emissions by Year Decreasing", xlab = "Year", ylab = "Total Emissions (in tons)", ylim=c(0, 10000000), yaxt = "n"))
 axis(2, at= seq(0,10000000, 1000000), labels = format(seq(0,10000000, 1000000), scientific = FALSE))
 lm1 <- lm(total_emissions ~ year, data = grp_yr_NEI)
